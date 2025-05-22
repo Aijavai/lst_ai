@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>电商 App</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#2563eb',
+secondary: '#64748b'
+},
+borderRadius: {
+'none': '0px',
+'sm': '2px',
+DEFAULT: '4px',
+'md': '8px',
+'lg': '12px',
+'xl': '16px',
+'2xl': '20px',
+'3xl': '24px',
+'full': '9999px',
+'button': '4px'
+}
+}
+}
+}
+</script>
+<style>
+body {
+min-height: 1024px;
+width: 1440px;
+margin: 0 auto;
+background-color: #f8fafc;
+}
+.search-input::-webkit-input-placeholder {
+color: #94a3b8;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+</style>
+</head>
+<body>
+<header class="bg-white shadow-sm fixed top-0 w-[1440px] z-50">
+<div class="flex items-center justify-between px-6 py-4">
+<div class="font-['Pacifico'] text-2xl text-primary">logo</div>
+<div class="flex-1 max-w-2xl mx-8 relative">
+<input type="text" class="search-input w-full py-2 px-10 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-primary" placeholder="搜索商品">
+<i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+</div>
+<div class="flex items-center space-x-6">
+<button class="relative !rounded-button">
+<i class="fas fa-shopping-cart text-xl text-gray-600"></i>
+<span class="absolute -top-2 -right-2 bg-primary text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">3</span>
+</button>
+<button class="flex items-center space-x-2 !rounded-button">
+<img src="https://ai-public.mastergo.com/ai/img_res/b8cf179db835c707554d3ea59f518892.jpg" class="w-8 h-8 rounded-full object-cover" alt="用户头像">
+<span class="text-gray-700">陈志远</span>
+</button>
+</div>
+</div>
+</header>
+<main class="mt-20 px-6">
+<section class="relative h-[400px] mb-12 rounded-xl overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent"></div>
+<img src="https://ai-public.mastergo.com/ai/img_res/bf197abcd1df623fc5a513779be6591c.jpg" class="w-full h-full object-cover" alt="Banner">
+<div class="absolute top-1/2 left-16 -translate-y-1/2 max-w-lg">
+<h1 class="text-4xl font-bold text-gray-800 mb-4">夏季特惠活动</h1>
+<p class="text-lg text-gray-600 mb-8">精选商品低至 5 折，更有限时抢购好礼相送</p>
+<button class="bg-primary text-white px-8 py-3 text-lg font-medium !rounded-button hover:bg-primary/90 transition-colors">立即购买</button>
+</div>
+</section>
+<section class="mb-12">
+<h2 class="text-2xl font-bold text-gray-800 mb-6">热门分类</h2>
+<div class="grid grid-cols-6 gap-6">
+<div class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-shadow cursor-pointer">
+<div class="w-full aspect-square rounded-lg overflow-hidden mb-4">
+<img src="https://ai-public.mastergo.com/ai/img_res/5c96e9c82cf16db7ffe7f17291f6307f.jpg" class="w-full h-full object-cover" alt="手机数码">
+</div>
+<h3 class="text-gray-700 font-medium">手机数码</h3>
+</div>
+<div class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-shadow cursor-pointer">
+<div class="w-full aspect-square rounded-lg overflow-hidden mb-4">
+<img src="https://ai-public.mastergo.com/ai/img_res/a75da5403aa99ff8fbbaaae7a485fe4d.jpg" class="w-full h-full object-cover" alt="时尚服饰">
+</div>
+<h3 class="text-gray-700 font-medium">时尚服饰</h3>
+</div>
+<div class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-shadow cursor-pointer">
+<div class="w-full aspect-square rounded-lg overflow-hidden mb-4">
+<img src="https://ai-public.mastergo.com/ai/img_res/0729b75b28e714929960b0a09a8b9509.jpg" class="w-full h-full object-cover" alt="美妆护肤">
+</div>
+<h3 class="text-gray-700 font-medium">美妆护肤</h3>
+</div>
+<div class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-shadow cursor-pointer">
+<div class="w-full aspect-square rounded-lg overflow-hidden mb-4">
+<img src="https://ai-public.mastergo.com/ai/img_res/95b07440d929f12c8238962da8120112.jpg" class="w-full h-full object-cover" alt="家用电器">
+</div>
+<h3 class="text-gray-700 font-medium">家用电器</h3>
+</div>
+<div class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-shadow cursor-pointer">
+<div class="w-full aspect-square rounded-lg overflow-hidden mb-4">
+<img src="https://ai-public.mastergo.com/ai/img_res/28910a36eddd6b25a124f487e5aace3b.jpg" class="w-full h-full object-cover" alt="生鲜食品">
+</div>
+<h3 class="text-gray-700 font-medium">生鲜食品</h3>
+</div>
+<div class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-shadow cursor-pointer">
+<div class="w-full aspect-square rounded-lg overflow-hidden mb-4">
+<img src="https://ai-public.mastergo.com/ai/img_res/55449ec31ccc476adc078f34974dd0aa.jpg" class="w-full h-full object-cover" alt="母婴用品">
+</div>
+<h3 class="text-gray-700 font-medium">母婴用品</h3>
+</div>
+</div>
+</section>
+<section class="mb-12">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-2xl font-bold text-gray-800">热销商品</h2>
+<div class="flex space-x-4">
+<button class="px-4 py-2 text-gray-600 bg-white border border-gray-200 !rounded-button hover:border-primary hover:text-primary transition-colors">综合排序</button>
+<button class="px-4 py-2 text-gray-600 bg-white border border-gray-200 !rounded-button hover:border-primary hover:text-primary transition-colors">销量优先</button>
+<button class="px-4 py-2 text-gray-600 bg-white border border-gray-200 !rounded-button hover:border-primary hover:text-primary transition-colors">价格</button>
+</div>
+</div>
+<div class="grid grid-cols-4 gap-6">
+<div class="bg-white rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+<img src="https://ai-public.mastergo.com/ai/img_res/b9873493033fc1321a196cc4f1e4bce2.jpg" class="w-full aspect-square object-cover" alt="iPhone 14 Pro">
+<div class="p-4">
+<h3 class="text-gray-800 font-medium mb-2">iPhone 14 Pro 256GB 暗紫色</h3>
+<p class="text-primary text-xl font-bold mb-3">¥8,999</p>
+<div class="flex items-center justify-between">
+<span class="text-gray-500 text-sm">已售 2,156</span>
+<button class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-primary/90 transition-colors">加入购物车</button>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+<img src="https://ai-public.mastergo.com/ai/img_res/34dcc224540421d8b9f08306da4babca.jpg" class="w-full aspect-square object-cover" alt="AirPods Pro">
+<div class="p-4">
+<h3 class="text-gray-800 font-medium mb-2">AirPods Pro 第二代</h3>
+<p class="text-primary text-xl font-bold mb-3">¥1,899</p>
+<div class="flex items-center justify-between">
+<span class="text-gray-500 text-sm">已售 3,421</span>
+<button class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-primary/90 transition-colors">加入购物车</button>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+<img src="https://ai-public.mastergo.com/ai/img_res/ffc5def523bd9d28844dc6c0ec406e46.jpg" class="w-full aspect-square object-cover" alt="Apple Watch">
+<div class="p-4">
+<h3 class="text-gray-800 font-medium mb-2">Apple Watch Series 8</h3>
+<p class="text-primary text-xl font-bold mb-3">¥3,199</p>
+<div class="flex items-center justify-between">
+<span class="text-gray-500 text-sm">已售 1,876</span>
+<button class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-primary/90 transition-colors">加入购物车</button>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+<img src="https://ai-public.mastergo.com/ai/img_res/89d2959051fafc83a48da7b8f026d44a.jpg" class="w-full aspect-square object-cover" alt="iPad Air">
+<div class="p-4">
+<h3 class="text-gray-800 font-medium mb-2">iPad Air 5 256GB WIFI</h3>
+<p class="text-primary text-xl font-bold mb-3">¥4,799</p>
+<div class="flex items-center justify-between">
+<span class="text-gray-500 text-sm">已售 986</span>
+<button class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-primary/90 transition-colors">加入购物车</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="mb-12">
+<h2 class="text-2xl font-bold text-gray-800 mb-6">猜你喜欢</h2>
+<div class="columns-6 gap-4">
+<div class="bg-white rounded-lg overflow-hidden hover:shadow-md transition-shadow mb-4 break-inside-avoid">
+<img src="https://ai-public.mastergo.com/ai/img_res/1c854d7638f3cf7c8d8974445621170b.jpg" class="w-full aspect-[3/4] object-cover" alt="无线充电器">
+<div class="p-3">
+<h3 class="text-sm text-gray-800 mb-2">MagSafe 无线充电器</h3>
+<p class="text-primary font-bold">¥299</p>
+</div>
+</div>
+
+<div class="bg-white rounded-lg overflow-hidden hover:shadow-md transition-shadow mb-4 break-inside-avoid">
+<img src="https://ai-public.mastergo.com/ai/img_res/6a146bcadcfde75a7d1eda31a0da933b.jpg" class="w-full aspect-[6/7] object-cover" alt="手机壳">
+<div class="p-3">
+<h3 class="text-sm text-gray-800 mb-2">iPhone 14 Pro 硅胶保护壳</h3>
+<p class="text-primary font-bold">¥199</p>
+</div>
+</div>
+
+<div class="bg-white rounded-lg overflow-hidden hover:shadow-md transition-shadow mb-4 break-inside-avoid">
+<img src="https://ai-public.mastergo.com/ai/img_res/190c3ce91b400a83ef1cf985b4fc072d.jpg" class="w-full aspect-[2/3] object-cover" alt="充电宝">
+<div class="p-3">
+<h3 class="text-sm text-gray-800 mb-2">10000mAh 快充移动电源</h3>
+<p class="text-primary font-bold">¥159</p>
+</div>
+</div>
+
+<div class="bg-white rounded-lg overflow-hidden hover:shadow-md transition-shadow mb-4 break-inside-avoid">
+<img src="https://ai-public.mastergo.com/ai/img_res/6ff5a531a799f349596323aab37e5588.jpg" class="w-full aspect-square object-cover" alt="钢化膜">
+<div class="p-3">
+<h3 class="text-sm text-gray-800 mb-2">iPhone 钢化玻璃膜</h3>
+<p class="text-primary font-bold">¥49</p>
+</div>
+</div>
+
+<div class="bg-white rounded-lg overflow-hidden hover:shadow-md transition-shadow mb-4 break-inside-avoid">
+<img src="https://ai-public.mastergo.com/ai/img_res/1abb4b499262a9cc68d545ae8fa180aa.jpg" class="w-full aspect-[3/4] object-cover" alt="笔记本支架">
+<div class="p-3">
+<h3 class="text-sm text-gray-800 mb-2">铝合金笔记本支架</h3>
+<p class="text-primary font-bold">¥89</p>
+</div>
+</div>
+
+<div class="bg-white rounded-lg overflow-hidden hover:shadow-md transition-shadow mb-4 break-inside-avoid">
+<img src="https://ai-public.mastergo.com/ai/img_res/f344c9d0952c48e2de7eab8f1a9dafe9.jpg" class="w-full aspect-[6/7] object-cover" alt="蓝牙音箱">
+<div class="p-3">
+<h3 class="text-sm text-gray-800 mb-2">便携蓝牙音箱</h3>
+<p class="text-primary font-bold">¥229</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 w-[1440px] bg-white border-t border-gray-100 px-6 py-3">
+<div class="flex items-center justify-around">
+<a href="#" class="flex flex-col items-center text-primary">
+<i class="fas fa-home text-xl mb-1"></i>
+<span class="text-sm">首页</span>
+</a>
+<a href="#" class="flex flex-col items-center text-gray-400 hover:text-primary">
+<i class="fas fa-th-large text-xl mb-1"></i>
+<span class="text-sm">分类</span>
+</a>
+<a href="#" class="flex flex-col items-center text-gray-400 hover:text-primary">
+<i class="fas fa-shopping-cart text-xl mb-1"></i>
+<span class="text-sm">购物车</span>
+</a>
+<a href="#" class="flex flex-col items-center text-gray-400 hover:text-primary">
+<i class="fas fa-user text-xl mb-1"></i>
+<span class="text-sm">我的</span>
+</a>
+</div>
+</nav>
+</body>
+</html>
