@@ -15,3 +15,5 @@
 - git config --list 查看配置信息
 - git config --global core.editor "vim" 配置编辑器为vim
 - git config --global core.editor "code --wait" 配置编辑器为vscode
+
+- new.txt 
