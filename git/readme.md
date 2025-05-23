@@ -17,3 +17,5 @@
 - git config --global core.editor "code --wait" 配置编辑器为vscode
 
 - new.txt 
+
+- git 版本控制

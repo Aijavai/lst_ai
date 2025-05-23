@@ -4,7 +4,7 @@
     LLM deepseek
     代码生成，方案生成，建议
 - 下一代AI总管产品
-    Manu 强带去做
+    Manus 强带去做
     - 字节hr
         一堆的简历 AI 怎么提高工作效率
         - 交给deepseek
