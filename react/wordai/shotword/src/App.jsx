@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import PictureCard from './components/PictureCard'; 
-import { generateAudio } from 
+// uploadImg 太长了 -> generateAudio 模块化 -> 复用
+import { generateAudio } from './lib/audio.js';
 import './App.css'
 
 function App() {
