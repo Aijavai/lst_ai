@@ -41,7 +41,20 @@
             onAddTodo  // 添加
         } = props 单独解构
 
+- 数据绑定
+    - 变量 修改值
+    - 数据状态
+        - Data binding **数据**绑定  没有数据 JSX就是静态的
+        {} 数据绑定
+        - 数据和界面状态的统一 
+          - 界面由数据驱动的 
+          - 数据和界面状态的一致性
+        - 数据发生改变是响应式的
+
 - vue 和 react 区别
     - vue 好入门，api好用
     - react 倾向于原生JS  入门难
-        - hooks
+        - hooks 
+    - <input v-model="text">   vue中表单的绑定  双向绑定
+      <input value = {text} onChange={() => setText(text);}>  react 坚持 单向绑定
+      
