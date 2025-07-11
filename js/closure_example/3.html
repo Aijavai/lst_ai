@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Book(title, author, year) {
+            // 对内
+            // 对外
+            let _title = title; // _开始的变量 私有变量  内部
+            let _author = author;
+            let _year = year;
+            this.getTitle = function() {
+                return _title;
+            }
+            // 私有
+            function getFullTitle() {
+                return `${_title} by ${_author}`
+            }
+
+            this.getFullInfo = function() {
+                return `${getFullTitle()}, published in ${year}`
+            }
+
+            this.getAuthor = function() {
+                return _author;
+            }
+            this.getYear = function() {
+                return _year;
+
+            // 类的开发者，和类的使用者，可能是两拨人
+            this.updateYear = function(newYear) {
+                if (typeof newYear === 'number' && newYear > 0) {
+                    _year = newYear;
+                }
+                else {
+                    console.log('输入的年份不合法');
+                }
+            }
+            }
+        }
+
+       let book = new Book("JavaScript高级程序设计","Nicholas",2011)
+       console.log(book.getTitle());
+       console.log(book.getFullInfo());
+       book.updateYear('123')
+       book.updateYear(2015)
+       console.log(book.getYear());
+       
+       
+       
+    </script>
+</body>
+</html>
