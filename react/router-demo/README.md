@@ -1,12 +1,20 @@
-# React + Vite
+# react-router-dom
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 路由？
+  - 后端路由
+    暴露资源
+  - 前端资源
+    - 首页
+    - 列表页
+    - 登录...
+    前端页面导航由前端路由负责
+- react 开头
+  react 生态系统的一部分
+  - react 负责 响应式、状态管理、组件、hooks等核心功能
+  - react-router-dom
+  - redux/mobx
+  - axios
+## react 开发全家桶
+- react 19
+- react-dom 19
+- react-router-dom  7.6.3  大版本，小版本，紧急更新
