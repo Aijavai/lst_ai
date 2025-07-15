@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设计模式之单例模式</title>
+</head>
+<body>
+    <script>
+        // 函数 + prototype 完成类 原型式的 
+        // js 的原型式的 
+        // es6 为了拥抱更多开发者 企业级大型项目开发
+        class Storage {
+
+            constructor() {
+
+            }
+            // 静态方法
+            static getInstance() {
+                // 静态属性
+                if (!Storage.instance){
+                    Storage.instance = new Storage();
+                }
+                return Storage.instance;
+            }
+
+            getItem(key) {
+                return localStorage.getItem(key);
+            }
+
+            setItem(key, value) {
+                return localStorage.setItem(key, value);
+            }
+        }
+        // 静态方法 属于类的方法 不用实例化
+        const storage1 = Storage.getInstance();
+        const storage2 = Storage.getInstance();
+
+        console.log(storage1 === storage2, '````');
+        storage1.setItem('name','llll')
+        console.log(storage1.getItem('name'));
+        console.log(storage2.getItem('name'));
+        
+        
+    </script>
+</body>
+</html>
