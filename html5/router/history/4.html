@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>单页网站示例</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    section { display: none; }
+    section.active { display: block; }
+    nav a { margin-right: 10px; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a onclick="navigate('home')">首页</a>
+    <a onclick="navigate('about')">关于我们</a>
+    <a onclick="navigate('contact')">联系我们</a>
+  </nav>
+
+  <section id="home" class="active">
+    <h1>欢迎来到主页</h1>
+  </section>
+
+  <section id="about">
+    <h1>关于我们</h1>
+  </section>
+
+  <section id="contact">
+    <h1>联系我们</h1>
+  </section>
+
+  <script>
+    // 页面切换函数
+    function navigate(page) {
+      showPage(page);
+      history.pushState({ page }, '', `#${page}`);
+    }
+
+    // 页面显示函数
+    function showPage(page) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(page).classList.add('active');
+    }
+
+    // 监听浏览器后退/前进
+    window.onpopstate = function(event) {
+      const page = event.state?.page || 'home';
+      showPage(page);
+    };
+
+    // 初始加载时根据地址栏 hash 显示相应内容
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = location.hash.replace('#', '') || 'home';
+      showPage(hash);
+      history.replaceState({ page: hash }, '', `#${hash}`);
+    });
+  </script>
+</body>
+</html>

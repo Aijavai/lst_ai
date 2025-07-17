@@ -21,7 +21,7 @@ hash
         页面级别组件
     - Routes/Route 申明，文档流中占位
     - Routes外面，Outlet 外面 不用更新的
-    - url 
+    - url  
     - Route 内部显示哪个页面组件，进行热更新
 
 ## 核心
@@ -45,3 +45,26 @@ hash
 - 事件
     hashChange
 - 
+
+
+## 基于SPA
+- url 可以改变，但不会向后端发送请求 前端路由
+    - hash + hashchange 事件 + DOM
+    - history + pushState/popState
+- 前端路由 react-router-dom 配置 页面级别组件
+    热更新 Route
+    Outlet
+- 单页应用
+    只有一个页面 但可以有多个url 路由状态
+    页面级别组件
+    window.location window.history 
+    栈
+    State 
+
+- history 
+    很早就有，在浏览器历史记录里游走
+    - html5 赋予history 新的功能
+    - hash + hashchange 有优点，但有很大的缺点
+        兼容性好
+        缺点 https://127....#home
+        #home 哈希不好理解 只有前端路由有
