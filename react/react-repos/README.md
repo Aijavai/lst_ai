@@ -1,12 +1,40 @@
-# React + Vite
+# react repos 项目开发
+- api.github.io/users/
+- 综合react开发全家桶、项目级别、大型的、考虑性能
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 路由设计
+    - react-router-demo
+    - /users/:username
+    - /repos/:id
+    懒加载 Suspense + lazy
+    hash/history
+    路由守卫 
+    useParams 拿到动态路由中 :username
+## 数据管理
+    App 数据管理
+    repos 
+    useContext + useReducer + hooks
+    createContext + reducer + useRepos
+## react
+    组件的粒度
+## api
+    fetch
+    - axios 专业的http请求库 
+    - 独立的模块，所有的请求会从组件中分离到api目录下 
 
-Currently, two official plugins are available:
+## 项目目录结构，项目架构
+    - api 
+        应用中的所有接口
+    - main.jsx
+        入口文件
+        添加路由功能， SPA 
+        添加全局应用状态管理
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- RepoList 功能模块
+    - params 解析
+        - useParams  动态参数对象 
+        - 不要放到useEffect 里面
+        - 校验id 
+            不要相信用户的任何提交
+        - navigate('/') -> useEffect 中去
