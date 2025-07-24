@@ -9,4 +9,11 @@ import { log } from "console"
 // - for of 
 
 const names = Array.of('Alice', 'Bob', 'Charlie', 'David');
-console.log(names)
+console.log(names);
+names.forEach(name => {
+    if (name == 'Charlie'){
+    console.log("Charlie is here, stop...");
+    return;
+    }
+    
+})

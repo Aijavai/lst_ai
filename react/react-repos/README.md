@@ -38,3 +38,13 @@
         - 校验id 
             不要相信用户的任何提交
         - navigate('/') -> useEffect 中去
+
+- 组件开发模式
+    - UI 组件(JSX)
+    - 自定义hooks useRepos 方便
+    - 状态管理 应用全局 context 来管
+        - repos loading error => context value
+        - useReducer reducer 函数     响应式状态 -> 响应式状态管理
+
+
+

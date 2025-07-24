@@ -6,6 +6,7 @@ for (let item of arr) {
 
 // for of item 还要拿到index?
 for (const [index, value] of arr.entries()) {
+    // 每一项都是数组， 第一项是key， 第二项是值
     console.log(index, value);
     
 }

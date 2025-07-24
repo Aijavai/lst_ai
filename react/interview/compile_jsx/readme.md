@@ -11,8 +11,21 @@
     es6 promise -> es8 async await
     let -> var
     () => {} -> function() {} 
-    pnpm i @babel/cli @babel/core -D
+  
 
     ​语法降级​：让开发者能用最新语法写代码。
     ​扩展性​：支持 JSX、TypeScript 等非标准语法。
     ​兼容性​：填补浏览器/环境的 API 差异。
+
+- 编译的流程
+    - pnpm i @babel/cli @babel/core -D
+        @babel/cli    babel的命令行工具
+        @babel/core   babel的核心工程
+        babel 负责JS 转码 es6 ->es5 或更早的
+        -D 开发阶段的依赖 dev 
+        上线后是不用的 
+    - ./node_modules/.bin/babel 
+        配置转换的规则 
+        react -> IOS 代码 
+        es6+ -> es5
+        JSX -> React.createElement
