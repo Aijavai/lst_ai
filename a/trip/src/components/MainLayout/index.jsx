@@ -18,7 +18,7 @@ import {
     useLocation
 } from 'react-router-dom'
 
-// 菜单栏配置
+// 菜单栏配置O
 const tabs = [
     { icon: <HomeO />, title: '首页', path: '/home'},
     { icon: <Search />, title: '特惠专区', path: '/discount'},
@@ -49,7 +49,16 @@ const MainLayout = () => {
     
     return (
         <>
-            <Outlet />
+        <div 
+            className='flex flex-col h-screen'
+            style={{
+                paddingBottom: '60px'
+            }}
+            >
+            <div className='flex-1'>
+                <Outlet />
+            </div>
+        </div>
             {/* tabbar */}
             <Tabbar value={active} onChange={handleTabChange}>
                 {tabs.map((tab, index) => (
