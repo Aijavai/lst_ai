@@ -2,13 +2,11 @@ import {
     Outlet
 } from 'react-router-dom'
 const BlankLayout = () => {
-  return (
-    <>
-        <Outlet />
-      <h1>BlankLayout</h1>
-      
-    </>
-  )
+    return (
+        <>
+            <Outlet />
+        </>
+    )
 }
 
-export default BlankLayout
+export default BlankLayout;

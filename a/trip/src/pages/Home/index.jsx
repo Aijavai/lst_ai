@@ -1,10 +1,11 @@
-import useTitle from '@/hooks/useTitle'
+import useTitle from '@/hooks/useTitle';
+
 const Home = () => {
-    useTitle('首页')
+    useTitle("奶龙首页");
     return (
-      <div>
-        <h1>Home</h1>
-      </div>
+        <>
+            Home
+        </>
     )
 }
 

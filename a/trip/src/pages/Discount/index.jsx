@@ -1,9 +1,9 @@
 const Discount = () => {
-  return (
-    <div>
-      <h1>Discount</h1>
-    </div>
-  )
+    return (
+        <>
+            Discount
+        </>
+    )
 }
 
 export default Discount
