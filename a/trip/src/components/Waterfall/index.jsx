@@ -1,48 +1,67 @@
 import styles from './waterfall.module.css';
 import {
-    useEffect,
-    useRef
+    useMemo
 } from 'react';
 import ImageCard from '@/components/ImageCard';
+import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 
 const Waterfall = (props) => {
-    const loader = useRef(null);
     const { 
         images, 
         fetchMore, 
         loading 
     } = props;
 
-    useEffect(() => {
-        // ref 出现在视窗了 intersectionObserver
-        // 观察者模式 
-        const observer = new IntersectionObserver(([entry]) => {
-            console.log(entry);
-            if (entry.isIntersecting) {
-                fetchMore();
+    // 智能分配图片到两列，保持高度平衡
+    const { leftColumn, rightColumn } = useMemo(() => {
+        const left = [];
+        const right = [];
+        let leftHeight = 0;
+        let rightHeight = 0;
+
+        images.forEach(img => {
+            // 选择高度较小的列
+            if (leftHeight <= rightHeight) {
+                left.push(img);
+                leftHeight += img.height || 300; // 默认高度300
+            } else {
+                right.push(img);
+                rightHeight += img.height || 300;
             }
-        })
-        if (loader.current) {
-            observer.observe(loader.current);
-        }
-    }, [])
+        });
+
+        return { leftColumn: left, rightColumn: right };
+    }, [images]);
+
+    // 使用自定义Hook处理无限滚动
+    const loaderRef = useIntersectionObserver(
+        (entry) => {
+            console.log('Loader entered viewport:', entry);
+            fetchMore();
+        },
+        {}, // 默认配置
+        [fetchMore] // 依赖数组
+    );
+    
     return (
         <div className={styles.wrapper}>
            <div className={styles.column}>
                {
-                images.filter((_, i) => i % 2 === 0).map(img => (
+                leftColumn.map(img => (
                     <ImageCard key={img.id} {...img} />
                 ))
                }
            </div>
            <div className={styles.column}>
                {
-                images.filter((_, i) => i % 2 !== 0).map(img => (
+                rightColumn.map(img => (
                     <ImageCard key={img.id} {...img} />
                 ))
                }
            </div>
-           <div ref={loader} className={styles.loader}>加载中...</div>
+           <div ref={loaderRef} className={`${styles.loader} ${loading ? styles.loading : ''}`}>
+               {loading ? '加载中...' : '滑动加载更多'}
+           </div>
         </div>
     )
 }
