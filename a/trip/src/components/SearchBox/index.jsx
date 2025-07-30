@@ -25,11 +25,9 @@ const SearchBox = (props) => {
     const handleChange = (e) => {
         let val = e.currentTarget.value;
         setQuery(val);
-
     }
     const clearQuery = () => {
         setQuery("");
-        
         queryRef.current.value = "";
         queryRef.current.focus();
     }
@@ -39,6 +37,8 @@ const SearchBox = (props) => {
     const handleQueryDebounce = useMemo(() => {
         return debounce(handleQuery, 300);
     }, [])
+     // 根据是否有输入内容控制清除按钮显示
+    // 三元运算符实现条件渲染
     const displayStyle = query?{display: 'block'}:{display:'none'};
     useEffect(() => {
         console.log(query, '/////');
