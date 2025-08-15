@@ -81,7 +81,6 @@ ReadMe.md 很重要 方便面试官
     css px 宽度 = 手机设备宽度 = 375
     1px = 2发光源
     750px 设计稿
-
 - 设计稿上一个盒子的大小？
     - 1像素不差的还原设计稿
     - 设计稿中像素单位
@@ -121,7 +120,6 @@ ReadMe.md 很重要 方便面试官
 - chatbot 模块
     - llm 模块  chat 封装   
     - 迭代chat, 支持任意模型 
-
 - Search 
     - 防抖
     - api
@@ -139,6 +137,19 @@ ReadMe.md 很重要 方便面试官
     数据驱动界面（两列）  奇偶
     - 加载更多 位于盒子底部的元素 通过使用 IntersectionObserver
     观察它是否出现在视窗 ， 性能更好，使用了观察者模式
+    组件卸载时， 直接使用disconnect 释放资源， 防止内存泄漏 
+    - key id 下拉刷新
+    - 使用IntersectionObserver 再次图片懒加载 data-src
+- toast 组件封装
+    - 需要自定义，UI组件库不满足需求
+    - UI props
+    - JS 显示出来 跨层级通信
+        观察者
+    - mitt eventBus 事件总线
+        - 实例化 mitt()
+        - on(自定义事件的名字，callback)
+        - emit(自定义事件的名字，数据)
+        组件通过监听一个自定义事件，实现基于事件的组件通信 
 ## 项目亮点和难点
 - 前端智能
     - chat 函数
@@ -147,7 +158,33 @@ ReadMe.md 很重要 方便面试官
         随意切换大模型，通过参数抽象
     - 文生图
         - 优化prompt 设计，
-        
+    - 智能生成图片
+        - 产品
+        曲棍球社群的宠物运动员 智能出图
+        社交属性
+        - 商业价值
+        技术服务 
+        coze 工作流 智能编排AI 流程 编程的一种  
+        - api 调用  
+
+    - 设计工作流
+        - 创建工作流 ani_pic
+            上次宠物照片，生成宠物曲棍球运动员照片
+        - 代码节点
+            参数校验和逻辑功能， 返回运行的结果
+        - 图片生成流程
+            - 图片理解插件  计算机视觉
+            - 大模型 特征提取 
+            prompt
+        - workflow_id  7533135524773855295
+        - token 
+        - coze 图片要先上传到coze 中
+            uploadUrl + token + new FormData
+            append(file)
+            拿到file_id
+        - workflowUrl + workflow_id + token
+            工作流需要的参数
+    
 - 原子css
     - App.css 里面添加通用样式
     - 各自模块里module.css 不影响其他组件
@@ -157,6 +194,7 @@ ReadMe.md 很重要 方便面试官
         一个元素按功能逻辑拆分成多个类，和原子一样
         元素的样式就可以由这些原子类组合而成
         样式复用的更好，以后几乎可以不用写样式
+
 - 用户体验优化
     - 搜索建议，防抖 + useMemo 性能优化
     - 组件粒度划分 
@@ -165,10 +203,20 @@ ReadMe.md 很重要 方便面试官
     - 热门推荐 + 相关商品 （产品）
     - SPA 
     - 骨架屏 不用让用户等待了 
+    - 文件上传的preview html5 FileReader 对象
 ## 项目遇到过什么问题，怎么解决的
 - chat messages 遇到message 覆盖问题 
 - 闭包陷阱问题 
     一次事件里面，两次setMessages()
+- 升级瀑布流？
+    - 骨架屏
+    - 奇偶images 两列分配可能一列全都短图片，不好看
+        两个响应式数组，判断哪一列高度更少，将新得到的img 加入那个数组
+    - intersectionObserver 用了两次，重复了， 违反了 dry 原则
+- 自定义Hooks
+    - useTitle
+    一定要设置
+
 - es6 特性使用
     tabbar 的高亮
     - arr.findIndex

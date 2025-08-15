@@ -8,3 +8,10 @@
   }
   : React.FC<Props>
   - 组件 state 
+    - 单向数据流
+    - props callback
+    - 函数类型 () => void
+    - 参数的类型约定
+    - React 对ts 原生支持的特别好
+      React.FC
+      React.ChangeEvent<HTMLInputElement>

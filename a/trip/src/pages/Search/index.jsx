@@ -46,9 +46,8 @@ const Search = () => {
         if (!query) {
             return;
         }
-        
         setSuggestList(query);
-    }
+    } 
 
     const suggestListStyle = {
         display: query == ""? 'none': 'block'

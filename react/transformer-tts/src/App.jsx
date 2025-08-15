@@ -24,7 +24,7 @@ function App() {
   const worker = useRef(null)
   useEffect(() => {
     // 引入transformer
-    // http://localhost:5173/worker.js
+    // http://localhost:5173/worker.js  
     worker.current = new Worker(new URL('./worker.js', import.meta.url), {
       type: 'module'
     })

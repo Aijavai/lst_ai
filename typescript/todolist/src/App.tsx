@@ -1,6 +1,5 @@
-import { useState } from 'react'
 import './App.css'
-import HelloComponent from './components/HelloComponent'
+import HelloComponent from './components/HelloComponent.tsx'
 // react + typescript
 // javascript 可能会有些问题, 主要因为弱类型
 // jsx 后缀改成tsx 
@@ -44,7 +43,8 @@ function App() {
     {count}
     {title}
     {user.name}{user.age}
-    <HelloComponent />
+    {/* typescript 很严格 */}
+    <HelloComponent name="Apex" age={123}/>
     </>
   )
 }

@@ -1,3 +1,9 @@
+import jwt from 'jsonwebtoken'
+
+// 安全性  编码的时候加密
+// 解码的时候用于解密
+const secret = '!$dfjeiowgcjfsd'
+
 // login 模块 mock 
 export default [
     {
@@ -7,9 +13,40 @@ export default [
         response: (req, res) => {
             // req, username, password
             const { username, password } = req.body;
+            if (username !== 'admin' || password !== '123456') {
+                return {
+                    code: 1,
+                    msg: '登录失败'
+                }
+            }
+            // json 用户数据
+            const token = jwt.sign({
+                user: {
+                    id: '001',
+                    username: 'admin'
+                }
+            }, secret, {
+                // 有效时长
+                expiresIn: 86400   
+            })
+            console.log(token,'----------');
+            
+            // 生成token  颁发令牌 
             return {
+               token,
                username,
                password
+            }
+        }
+    },
+    {
+        url: 'api/user',   
+        method: 'get',
+        response: (req, res) => {
+            // 用户端 token headers 中
+            const token = req.headers["authorization"]; 
+            return {
+                token
             }
         }
     }

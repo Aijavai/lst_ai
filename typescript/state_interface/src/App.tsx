@@ -7,6 +7,7 @@ function App() {
   // typescript代码
   const [name, setName] = useState<string>("initialName");
   // 单向数据流 
+  
   const setUsernameState = (event:React.ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
   };
@@ -15,6 +16,6 @@ function App() {
       <NameEditComponent userName={name} onChange={setUsernameState}/>
     </>
   )
-}
+} 
 
 export default App
