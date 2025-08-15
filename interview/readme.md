@@ -27,6 +27,7 @@
         所有人都在用的，线上分支
     - 新开一个分支
     git checkout -b xxx
+    git branch
 - 常用命令
     git pull origin main 每天上班前的动作
     git status 当前git 状态
@@ -34,3 +35,6 @@
     git add . 提交到暂存区
     git commit -m '' 提交到仓库
     git push origin main 提交到远程仓库
+
+- 场景
+    - 回退 git restore --staged .\algorithm\readme.md
