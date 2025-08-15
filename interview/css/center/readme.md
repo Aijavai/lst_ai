@@ -16,8 +16,16 @@
         line-height + vertical-align  (父元素要设置line-height)
         方法三：writing-moden  控制文字书写方式
         方法四：table-cell
-        方法五：flex
+        方法五：flex    .container {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
         方法六：grid 布局
+                        .container {
+                            display: grid;
+                            place-items: center;
+                        }
 
         实际应用建议
             导航栏居中：使用Flexbox
