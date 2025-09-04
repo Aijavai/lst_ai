@@ -4,6 +4,7 @@ pnpm i prisma @prisma/client
 
 - 启动
 npx prisma init
+npx prisma migrate dev --name init  //将 Prisma 数据模型同步到数据库
 
 # next.js 全栈项目
 
@@ -33,8 +34,8 @@ npx prisma init
 - Prisma Schema 是定义数据库模型、关系和数据类型的配置文件，
 用于生成类型安全的数据库客户端。
     prisma schema 是数据库的设计图
-    navicat 好的地方, schema + git 留下数据库设计和修改的历史
-    文档型的，可以追踪。留底
+    **schema + git 留下数据库设计和修改的历史**
+    **文档型的，可以追踪。留底**
 
 - Model 表的映射模型
     @@map("users") 指定模型对应的表名
@@ -46,3 +47,24 @@ npx prisma init
         索引
         relation
     }
+
+
+    - migration  迁移
+        记录
+
+- restful API
+- lib/ 复用的js 模块
+- regexp 
+    前端，后端要会正则
+
+
+- bcryptjs 加密js 模块  单向的加密算法 （不能被解密）
+    register 加密一次
+    login  password 加密一次
+    比较的是加密后的串是否一样？
+- 状态码
+    - 200 ok
+    - 201 Created 
+    - 400 Bad Request
+    - 409 Conflict
+    - 500 Internal Server Error
