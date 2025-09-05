@@ -5,6 +5,10 @@ import {
 import {
     prisma
 } from '@/lib/db';
+import {
+    emailRegex,
+    passwordRegex
+} from '@/lib/regexp';
 import { error } from 'console';
 import bcrypt from 'bcryptjs';
 // restuful
@@ -14,8 +18,6 @@ import bcrypt from 'bcryptjs';
 // @ email 必须要有的字符
 // .+@ 在@前面至少要有一个字符
 // \. 一定要有一个. 
-const emailRegex = /.+@.+\..+/; // RegExp
-const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
 export async function POST(request: NextRequest) {
     // 容错处理 稳定为主
     try {
@@ -74,5 +76,8 @@ export async function POST(request: NextRequest) {
     }, {
         status: 500
     })
+ } finally {
+    // 释放数据库对象
+    await prisma.$disconnect();
 }
 }
