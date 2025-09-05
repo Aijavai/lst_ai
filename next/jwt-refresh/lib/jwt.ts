@@ -57,3 +57,13 @@ export const setAuthCookies = async (accessToken: string,
             path: '/'
         });
     }
+
+export const verifyToken = async (token: string) => {
+    try {
+        const {payload} = await jwtVerify(token, getJwtSecretKey());
+        return payload;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
+}
