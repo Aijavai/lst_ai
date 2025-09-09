@@ -1,5 +1,5 @@
 安装依赖
-- npm init -y
+- npm init -y   
 - pnpm i @babel/core @babel/cli babel-loader @babel/preset-react -D
 
 运行
@@ -18,7 +18,7 @@
     js 里编写HTML, 极其简单的表达UI
     babel React.createElement
     Dideact.createElement
-    
+
     React.createElement 返回的是一个轻量级的普通 JavaScript 对象（即 React 元素），它描述了你希望在屏幕上看到的内容，而不是实际的 DOM 节点。ReactDOM 会根据这个对象来决定如何更新实际的 DOM。
 
 ## createElement
@@ -56,3 +56,10 @@ fiber 节点就是工作节点
 - 中断
 - 继续
 - fiber 节点对象有哪些属性
+
+
+## 补充
+- pragma: Didact.createElement 指定编译JSX 标签时使用的创建函数
+- pragmaFrag: Didact.Fragment 函数来处理片段逻辑
+
+- 虚拟d

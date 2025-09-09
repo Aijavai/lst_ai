@@ -32,7 +32,7 @@ function createTextElement(text) {
 
 // render 负责把 VDOM 挂载为真实 DOM（此处为最小实现雏形）
 // 预期签名应为 render(element, container)，当前示例中省略了形参声明
-function render() {
+function render(element, container) {
     // 不考虑组件，仅处理原生标签与文本
     const dom = element.type == "TEXT_ELEMENT"
         ? document.createTextNode("")
